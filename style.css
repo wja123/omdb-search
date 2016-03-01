@@ -1,6 +1,10 @@
-.widget-poster{
-
+/*.widget-outer-poster{
+	position:relative;
 }
+.widget-poster{
+position:absolute;
+height:100%;
+}*/
 
 
 #movie-display-template{s

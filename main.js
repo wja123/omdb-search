@@ -8,6 +8,7 @@ var year="";
 var search="";
 var category="";
 var imdbLink="http://www.imdb.com/title/";
+var pageNum = 1;
 
 function init(){
 	queryString="http://www.omdbapi.com/?";
@@ -18,6 +19,10 @@ function init(){
 	$(".category-input").on("input",catInpHandler);
 	$("#notfound").hide();
 	$(".widget-row").hide();
+	$("#movie-display-template").hide();
+	$(".pagination-buttons").hide();
+	$("#previous").click(previousHandler);
+	$("#next").click(nextHandler);
 }
 
 
@@ -70,10 +75,9 @@ function searchHandler(){
 
 function searchAllHandler(){
 	event.preventDefault();
-	event.preventDefault();
 	console.log("click");
 	inpStr = $(".title-input").val();
-	var searchString = queryString+"s="+inpStr;
+	var searchString = queryString+"s="+inpStr+"&y="+year+"&type="+category+"&page="+pageNum;
 	$.ajax({
 		method:"GET",
 		url: searchString,
@@ -86,12 +90,11 @@ function searchAllHandler(){
 				$("#movie-display-template").hide();
 			}
 			else{
-				// $("#notfound").css("display","none");
 				$(".widget-row").show();
 				$("#notfound").hide();
 				$("#movie-display-template").hide();
 				searchData=data;
-				console.log(searchData.Response);
+				console.log(searchData);
 				searchUpdateAll(searchData.Search);
 			}
 		}	
@@ -113,7 +116,9 @@ function searchUpdate(inpData){
 
 function searchUpdateAll(inpData){
 	$(".widget-row").show();
+	$(".pagination-buttons").show();
 	$("#movie-display-template").hide();
+	$("#add-widget").remove();
 	var $widgRow = $(".widget-row");
 	$widgRow.show();
 	for(var i = 0; i <inpData.length; i++){
@@ -133,4 +138,18 @@ function searchUpdateAll(inpData){
 	$(".widget-row").show();
 	$("#widget-template").hide();
 
+}
+
+function previousHandler(){
+	console.log("previous");
+if(pageNum>1){
+	pageNum--;
+}
+searchAllHandler();
+}
+
+function nextHandler(){
+	console.log("next");
+	pageNum++;
+searchAllHandler();
 }
