@@ -6,6 +6,9 @@ position:absolute;
 height:100%;
 }*/
 
+* {
+  /*border: 1px solid red;*/
+}
 
 #movie-display-template{s
 	display:none;

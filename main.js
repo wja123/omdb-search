@@ -28,6 +28,7 @@ function init(){
 
 function titleInpHandler(){
 	inpStr=$(".title-input").val().toLowerCase();
+	pageNum=1;
 
 }
 
@@ -118,24 +119,25 @@ function searchUpdateAll(inpData){
 	$(".widget-row").show();
 	$(".pagination-buttons").show();
 	$("#movie-display-template").hide();
-	$("#add-widget").remove();
+	$(".add-widget").remove();
 	var $widgRow = $(".widget-row");
 	$widgRow.show();
+
 	for(var i = 0; i <inpData.length; i++){
 		console.log(inpData[i]);
 		var $widgItem = $("#widget-template").clone();
 		$widgItem.remove("id");
-		$widgItem.attr("id","add-widget");
+		$widgItem.addClass("add-widget");
 		$widgItem.find(".widget-title").text(inpData[i].Title);
 		$widgItem.find(".widget-category").text(inpData[i].Type);
 		$widgItem.find(".widget-id").text(inpData[i].imdbID);
 		$widgItem.find(".widget-year").text(inpData[i].Year);
 		$widgItem.find(".widget-poster").attr("src",inpData[i].Poster);
-
+		$widgItem.show();
 		$(".widget-row").append($widgItem);
 
 	}
-	$(".widget-row").show();
+	$widgRow.show();
 	$("#widget-template").hide();
 
 }
