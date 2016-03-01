@@ -20,7 +20,6 @@ function init(){
 	$(".widget-row").hide();
 }
 
-
 function titleInpHandler(){
 	inpStr=$(".title-input").val().toLowerCase();
 
@@ -80,7 +79,6 @@ function searchAllHandler(){
 		success:function(data){
 
 			if(data.Response === 'False'){
-				console.log(data.Response);
 				$(".widget-row").hide();
 				$("#notfound").show();
 				$("#movie-display-template").hide();
@@ -91,7 +89,6 @@ function searchAllHandler(){
 				$("#notfound").hide();
 				$("#movie-display-template").hide();
 				searchData=data;
-				console.log(searchData.Response);
 				searchUpdateAll(searchData.Search);
 			}
 		}	
