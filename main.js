@@ -121,7 +121,6 @@ function searchUpdateAll(inpData){
 		var $widgItem = $("#widget-template").clone();
 		$widgItem.remove("id");
 		$widgItem.attr("id","add-widget");
-		
 		$widgItem.find(".widget-title").text(inpData[i].Title);
 		$widgItem.find(".widget-category").text(inpData[i].Type);
 		$widgItem.find(".widget-id").text(inpData[i].imdbID);
