@@ -1,0 +1,17 @@
+.widget-poster{
+
+}
+
+
+#movie-display-template{
+	display:none;
+}
+
+#notfound{
+	display: block;
+
+}
+
+#widget-template{
+	display:none;
+}
