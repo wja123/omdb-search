@@ -17,7 +17,7 @@ function init(){
 	$(".search-all").click(searchAllHandler);
 	$(".title-input").on("change",titleInpHandler);
 	$(".year-input").on("change",yearInpHandler);
-	$(".category-input").on("change",catInpHandler);
+	$("#category-type").on("input",catInpHandler);
 	$("#notfound").hide();
 	$(".widget-row").hide();
 	$(".pagination-buttons").css("display","none");
@@ -35,8 +35,9 @@ function yearInpHandler(){
 }
 
 function catInpHandler(){
-	if($(".category-input").val().toLowerCase() !=="category (optional)"){
-		category=$(".category-input").val().toLowerCase();
+	console.log($("#category-type"));
+	if($("#category-type").val().toLowerCase() !=="category (optional)"){
+		category=$("#category-type").val().toLowerCase();
 	}else{
 		category="";
 	}
