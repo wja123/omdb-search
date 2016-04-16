@@ -8,14 +8,16 @@ var year="";
 var search="";
 var category="";
 var imdbLink="http://www.imdb.com/title/";
+var numPages =0;
+var currPage =0;
 
 function init(){
 	queryString="http://www.omdbapi.com/?";
 	$(".movie-search").click(searchHandler);
 	$(".search-all").click(searchAllHandler);
-	$(".title-input").on("input",titleInpHandler);
-	$(".year-input").on("input",yearInpHandler);
-	$(".category-input").on("input",catInpHandler);
+	$(".title-input").on("change",titleInpHandler);
+	$(".year-input").on("change",yearInpHandler);
+	$(".category-input").on("change",catInpHandler);
 	$("#notfound").hide();
 	$(".widget-row").hide();
 }
@@ -26,7 +28,7 @@ function titleInpHandler(){
 }
 
 function yearInpHandler(){
-	year=$(".year-input").val().toString.toLowerCase();
+	year=$(".year-input").val().toString().toLowerCase();
 
 }
 

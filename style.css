@@ -1,7 +1,15 @@
+.widget-outer-poster{
+	position:relative;
+}
 .widget-poster{
-
+position:relative;
+height:200px;
+width: 150px;
+background-color: black;
 }
 
+* {
+}
 
 #movie-display-template{s
 	display:none;
@@ -12,6 +20,36 @@
 
 }
 
+.caption{
+  min-height: 150px;
+}
 #widget-template{
 	display:none;
+  height:450px;
+  width:350px;
+} 
+
+.img-outer-box{
+  display:absolute;
+  height:100px;
+  width:100px;
+  background-color: black;
+}
+
+#next:hover, #previous:hover{
+  cursor: pointer;
+}
+
+#next, #previous{
+  font-size: 130%;
+  text-align: center;
+  background-color: lightgrey;
+  color:black;
+  margin-bottom:1%;
+  border:2px solid black;
+  border-radius: 5px;
+}
+
+.pagination-buttons{
+  bottom:0;
 }
