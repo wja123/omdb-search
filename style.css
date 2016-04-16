@@ -1,13 +1,14 @@
-/*.widget-outer-poster{
+.widget-outer-poster{
 	position:relative;
 }
 .widget-poster{
-position:absolute;
-height:100%;
-}*/
+position:relative;
+height:200px;
+width: 150px;
+background-color: black;
+}
 
 * {
-  /*border: 1px solid red;*/
 }
 
 #movie-display-template{s
@@ -19,6 +20,38 @@ height:100%;
 
 }
 
+.caption{
+  min-height: 150px;
+}
 #widget-template{
 	display:none;
+  height:450px;
+  width:350px;
+} 
+
+.img-outer-box{
+  display:absolute;
+  height:100px;
+  width:100px;
+  background-color: black;
+}
+
+#next:hover, #previous:hover{
+  cursor: pointer;
+}
+
+#next, #previous{
+  font-size: 130%;
+  text-align: center;
+  background-color: lightgrey;
+  color:black;
+  margin-bottom:1%;
+  border:2px solid black;
+  border-radius: 5px;
+}
+
+.pagination-buttons{
+  /*background-color: black;
+  position:absolute;*/
+  bottom:0;
 }
