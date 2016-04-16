@@ -11,7 +11,7 @@ background-color: black;
 * {
 }
 
-#movie-display-template{s
+#movie-display-template{
 	display:none;
 }
 
@@ -21,8 +21,9 @@ background-color: black;
 }
 
 .caption{
-  min-height: 150px;
+  height: 175px;
 }
+
 #widget-template{
 	display:none;
   height:450px;
